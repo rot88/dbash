@@ -1,25 +1,25 @@
-name: Node CI
+name: Publish to GitHub Package Registry
 
 on: [push]
 
 jobs:
-  test:
-
+  full:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install and test
-      run: |
-        npm ci
-        npm test
-      env:
-        CI: true
+        - uses: actions/checkout@v1
+        - name: Use Node.js 8.x
+          uses: actions/setup-node@v1
+          with:
+            registry-url: https://npm.pkg.github.com/
+            node-version: 8.x
+            scope: '@oocydo'
+        - name: npm install and test
+          run: |
+            npm install
+            npm test      
+        - name: publish
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
+          run: |
+            npm publish
