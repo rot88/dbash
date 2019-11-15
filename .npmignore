@@ -6,3 +6,7 @@ test/
 .gitignore
 
 .github
+.git
+
+.gpr-npmrc
+.npm-npmrc

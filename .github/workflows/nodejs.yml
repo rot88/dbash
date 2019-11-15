@@ -22,13 +22,15 @@ jobs:
         with:
           registry-url: https://registry.npmjs.org/
           node-version: 12
-      - name: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
+      - name: npm publish
         run: |
           npm ci
           npm run compile
           npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
 
   publish-gpr:
     runs-on: ubuntu-latest
@@ -39,10 +41,12 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           node-version: 12
           scope: '@oocydo'
-      - name: gpg publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
+      - name: gpg publish
         run: |
           npm ci
           npm run compile
           npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
