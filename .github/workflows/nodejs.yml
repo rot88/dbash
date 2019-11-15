@@ -24,9 +24,9 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
         env:
-          NPM_DBASH: ${{secrets.NPM_DBASH}}
+          NPM_DBASH: ${{ secrets.NPM_DBASH }}
       - run: |
-          npm config set //registry.npmjs.org/:_authToken=$NPM_DBASH
+          npm config set '//registry.npmjs.org/:_authToken' $NPM_DBASH
           npm ci
           npm publish
 
@@ -41,8 +41,8 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@oocydo'
         env:
-          GITHUB_DBASH: ${{secrets.GITHUB_DBASH}}
+          GPR_DBASH: ${{ secrets.GPR_DBASH }}
       - run: |
-          npm config set //npm.pkg.github.com/:_authToken=$GITHUB_DBASH
+          npm config set '//npm.pkg.github.com/:_authToken' $GPR_DBASH
           npm ci
           npm publish
