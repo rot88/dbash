@@ -47,6 +47,7 @@ jobs:
         run: |
           npm ci
           npm run compile
+          echo @oocydo:registry=https://npm.pkg.github.com/ >> .npmrc
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
