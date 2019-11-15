@@ -1,6 +1,6 @@
 {
   "name": "dbash",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "SQL and JS types converter",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
