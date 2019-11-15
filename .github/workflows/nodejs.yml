@@ -41,6 +41,6 @@ jobs:
           scope: '@oocydo'
       - name: gpg publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GPR_DBASH }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
         run: |
           npm publish
