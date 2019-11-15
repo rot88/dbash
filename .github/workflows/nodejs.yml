@@ -15,6 +15,7 @@ jobs:
       - run: npm run test
 
   publish:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -22,6 +23,7 @@ jobs:
         with:
           registry-url: https://registry.npmjs.org/
           node-version: 12
+      - run: npm ci
       - run: npm install
       - run: npm run compile
       - run: npm publish
@@ -29,8 +31,10 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
       - uses: actions/setup-node@v1
         with:
-          scope: '@oocydo'
+          node-version: 12
           registry-url: 'https://npm.pkg.github.com/'
+          scope: '@oocydo'
+      - run: npm ci
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
+          NODE_AUTH_TOKEN: ${{ secrets.GPR_DBASH }}
