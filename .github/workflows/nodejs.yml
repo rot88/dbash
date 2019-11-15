@@ -1,4 +1,4 @@
-name: Publish to npmjs.com
+name: Publish to registry.npmjs.org
 
 on: [push]
 
@@ -18,8 +18,9 @@ jobs:
             npm test      
         - name: publish
           env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
+            NPM_DBASH: ${{ secrets.NPM_DBASH }}
           run: |
             npm install
             npm run compile
+            npm config set '//registry.npmjs.org/:_authToken' "${NPM_DBASH}"
             npm publish
