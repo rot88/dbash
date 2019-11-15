@@ -20,4 +20,6 @@ jobs:
           env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
           run: |
+            npm install
+            echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}'>.npmrc
             npm publish
