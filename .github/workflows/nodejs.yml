@@ -11,15 +11,13 @@ jobs:
         - name: Use Node.js 8.x
           uses: actions/setup-node@v1
           with:
-            registry-url: https://npm.pkg.github.com/
             node-version: 8.x
-            scope: '@oocydo'
         - name: npm install and test
           run: |
             npm install
             npm test      
         - name: publish
           env:
-            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
           run: |
             npm publish
