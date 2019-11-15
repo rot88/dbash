@@ -28,7 +28,7 @@ jobs:
         run: |
           npm ci
           npm run compile
-          echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_DBASH }}" > ~/.npmrc
           npm publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_DBASH }}
@@ -50,7 +50,7 @@ jobs:
           mv gpr.package.json package.json
           npm ci
           npm run compile
-          echo @oocydo:registry=https://npm.pkg.github.com/ > .npmrc
+          echo @oocydo:registry=https://npm.pkg.github.com/ > ~/.npmrc
           npm publish
           mv package.json gpr.package.json
           mv npm.package.json package.json
