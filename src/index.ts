@@ -1,3 +1,2 @@
-export default function itWorks(): boolean {
-  return true;
-}
+export { jsBoolSqlInt } from './jsBoolSqlInt';
+export { sqlIntJsBool } from './sqlIntJsBool';
