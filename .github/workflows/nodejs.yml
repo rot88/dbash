@@ -23,7 +23,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
           node-version: 12
         env:
-          NPM_TOKEN: ${{ secrets.NPM_DBASH }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
       - name: npm publish
         run: |
           npm ci
@@ -31,7 +31,7 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_DBASH }}" > ~/.npmrc
           npm publish
         env:
-          NPM_TOKEN: ${{ secrets.NPM_DBASH }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
 
   publish-gpr:
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
           node-version: 12
           scope: '@oocydo'
         env:
-          NPM_TOKEN: ${{ secrets.GITHUB_DBASH }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
       - name: gpg publish
         run: |
           mv package.json npm.package.json
@@ -55,4 +55,4 @@ jobs:
           mv package.json gpr.package.json
           mv npm.package.json package.json
         env:
-          NPM_TOKEN: ${{ secrets.GITHUB_DBASH }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
