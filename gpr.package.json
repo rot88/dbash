@@ -17,6 +17,9 @@
     "types",
     "lodash"
   ],
+  "publishConfig": {
+    "registry": "https://npm/pkg.github.com"
+  },
   "author": "oocydo",
   "license": "MIT",
   "devDependencies": {
