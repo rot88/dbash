@@ -4,6 +4,15 @@
   "description": "SQL and JS types converter",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
+  "homepage": "https://github.com/oocydo/dbash/",
+  "bugs": {
+    "url": "https://github.com/oocydo/dbash/issues",
+    "email": "oocydo@gmail.com"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/oocydo/dbash.git"
+  },
   "scripts": {
     "compile": "npx tsc",
     "test": "mocha -r ts-node/register test/*.spec.ts"
