@@ -23,10 +23,9 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - name: Publish to NPM
-        run: npm publish
-          env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
 
   publish-gpr:
     needs: build
@@ -38,7 +37,6 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: '@oocydo'
-      - name: Publish to GPR
-        run: npm publish
-          env:
-            NODE_AUTH_TOKEN: ${{ secrets.GPR_DBASH }}
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GPR_DBASH }}
