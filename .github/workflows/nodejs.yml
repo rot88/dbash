@@ -1,26 +1,44 @@
-name: Publish to registry.npmjs.org
+name: Build, test and publish to NPM and GPR
 
 on: [push]
 
 jobs:
-  full:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-        - uses: actions/checkout@v1
-        - name: Use Node.js 8.x
-          uses: actions/setup-node@v1
-          with:
-            node-version: 8.x
-        - name: npm install and test
-          run: |
-            npm install
-            npm test      
-        - name: publish
-          env:
-            NPM_DBASH: ${{ secrets.NPM_DBASH }}
-          run: |
-            npm install
-            npm run compile
-            npm config set '//registry.npmjs.org/:_authToken' "${NPM_DBASH}"
-            npm publish
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm run compile
+      - run: npm run test
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_DBASH}}
+
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+          scope: '@oocydo'
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_DBASH}}
