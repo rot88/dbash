@@ -1,4 +1,4 @@
-name: Publish to GitHub Package Registry
+name: Publish to npmjs.com
 
 on: [push]
 
