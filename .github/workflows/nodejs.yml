@@ -14,7 +14,7 @@ jobs:
       - run: npm run compile
       - run: npm run test
 
-  publish-npm:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -22,39 +22,14 @@ jobs:
         with:
           registry-url: https://registry.npmjs.org/
           node-version: 12
+      - run: npm install
+      - run: npm run compile
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
-          NPM_DBASH: ${{ secrets.NPM_DBASH }}
-      - name: npm publish
-        run: |
-          npm ci
-          npm run compile
-          echo _auth=${NPM_DBASH} > .npmrc
-          echo _email=oocydo@gmail.com >> .npmrc
-          echo always-auth=true >> .npmrc
-          npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
-          NPM_DBASH: ${{ secrets.NPM_DBASH }}
-
-  publish-gpr:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          registry-url: https://npm.pkg.github.com/
-          node-version: 12
-          scope: '@oocydo'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
-      - name: gpg publish
-        run: |
-          mv package.json npm.package.json
-          mv gpr.package.json package.json
-          npm ci
-          npm run compile
-          echo @oocydo:registry=https://npm.pkg.github.com/ > ~/.npmrc
-          npm publish
+          registry-url: 'https://npm.pkg.github.com'
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
