@@ -34,6 +34,8 @@ jobs:
           node-version: 12
           registry-url: 'https://npm.pkg.github.com/'
           scope: '@oocydo'
+      - run: mv package.json npm-package.json
+      - run: mv gpr-package.json package.json
       - run: npm ci
       - run: npm publish
         env:

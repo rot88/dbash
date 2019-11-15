@@ -1,5 +1,5 @@
 {
-  "name": "dbash",
+  "name": "@oocydo/dbash",
   "version": "0.0.10",
   "description": "SQL and JS types converter",
   "main": "build/index.js",
@@ -17,6 +17,9 @@
     "types",
     "lodash"
   ],
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
   "author": "oocydo",
   "license": "MIT",
   "devDependencies": {
