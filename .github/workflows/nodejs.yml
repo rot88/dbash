@@ -28,7 +28,7 @@ jobs:
         run: |
           npm ci
           npm run compile
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_DBASH }}" > ~/.npmrc
+          printf "//%s/:_authToken=%s\\nregistry=%s" "https://registry.npmjs.org/" "${{ secrets.NPM_DBASH }}" "https://registry.npmjs.org/" > ~/.npmrc
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
