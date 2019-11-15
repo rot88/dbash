@@ -24,14 +24,18 @@ jobs:
           node-version: 12
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
+          NPM_DBASH: ${{ secrets.NPM_DBASH }}
       - name: npm publish
         run: |
           npm ci
           npm run compile
-          printf "//%s/:_authToken=%s\\nregistry=%s" "https://registry.npmjs.org/" "${{ secrets.NPM_DBASH }}" "https://registry.npmjs.org/" > ~/.npmrc
+          echo _auth=$NPM_DBASH > .npmrc
+          echo _email=oocydo@gmail.com >> .npmrc
+          echo always-auth=true >> .npmrc
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
+          NPM_DBASH: ${{ secrets.NPM_DBASH }}
 
   publish-gpr:
     runs-on: ubuntu-latest
@@ -52,7 +56,5 @@ jobs:
           npm run compile
           echo @oocydo:registry=https://npm.pkg.github.com/ > ~/.npmrc
           npm publish
-          mv package.json gpr.package.json
-          mv npm.package.json package.json
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
