@@ -6,7 +6,6 @@
   "typings": "build/index.d.ts",
   "scripts": {
     "compile": "npx tsc",
-    "prepublish": "npm run compile",
     "test": "mocha -r ts-node/register test/*.spec.ts"
   },
   "keywords": [
@@ -20,9 +19,6 @@
   ],
   "author": "oocydo",
   "license": "MIT",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "devDependencies": {
     "@types/chai": "^4.2.5",
     "@types/mocha": "^5.2.7",
