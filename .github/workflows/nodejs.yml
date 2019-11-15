@@ -29,7 +29,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_DBASH }}
       - uses: actions/setup-node@v1
         with:
-          registry-url: 'https://npm.pkg.github.com'
+          scope: '@oocydo'
+          registry-url: 'https://npm.pkg.github.com/'
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_DBASH }}
