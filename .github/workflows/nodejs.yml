@@ -24,7 +24,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
           node-version: 12
       - run: npm ci
-      - run: npm install
       - run: npm run compile
       - run: npm publish
         env:
@@ -37,6 +36,7 @@ jobs:
       - run: mv package.json npm-package.json
       - run: mv gpr-package.json package.json
       - run: npm ci
+      - run: npm run compile
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GPR_DBASH }}

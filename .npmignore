@@ -5,8 +5,8 @@ test/
 .editorconfig
 .gitignore
 
-.github
-.git
+.github/
+.git/
 
-.gpr-npmrc
-.npm-npmrc
+.gpr-package.json
+.npm-package.json
