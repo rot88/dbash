@@ -1,5 +1,19 @@
 import { expect } from 'chai';
-import { sqlIntJsBool } from '../src/sqlIntJsBool';
+import { jsBoolSqlInt, sqlIntJsBool } from '../src/booleans';
+
+describe('JS Boolean to SQL Integer', () => {
+    it('True should return 1', () => {
+        expect(jsBoolSqlInt(true)).to.be.equal(1);
+    });
+
+    it('False should return 0', () => {
+        expect(jsBoolSqlInt(false)).to.be.equal(0);
+    });
+
+    it('Null should return null', () => {
+        expect(jsBoolSqlInt(null)).to.be.equal(null);
+    });
+});
 
 describe('SQL Integer to JS Boolean', () => {
   it('Number that is not 0 should return true', () => {

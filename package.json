@@ -1,6 +1,6 @@
 {
   "name": "dbash",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "SQL and JS types converter",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
@@ -10,10 +10,11 @@
     "email": "oocydo@gmail.com"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/oocydo/dbash.git"
+    "type": "git",
+    "url": "https://github.com/oocydo/dbash.git"
   },
   "scripts": {
+    "docs": "npx typedoc --out ./docs/ ./src/",
     "compile": "npx tsc",
     "test": "mocha -r ts-node/register test/*.spec.ts"
   },
@@ -34,6 +35,7 @@
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
     "ts-node": "^8.5.2",
+    "typedoc": "^0.15.2",
     "typescript": "^3.7.2"
   }
 }

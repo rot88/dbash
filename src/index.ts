@@ -1,2 +1,1 @@
-export { jsBoolSqlInt } from './jsBoolSqlInt';
-export { sqlIntJsBool } from './sqlIntJsBool';
+export { jsBoolSqlInt, sqlIntJsBool } from './booleans';
