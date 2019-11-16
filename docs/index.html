@@ -71,7 +71,10 @@
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>Installation</h2>
 				</a>
-				<p>Simply run <code>npm install --save dbash</code> or <code>yarn add dbash</code></p>
+				<p>NPM:</p>
+				<pre><code class="language-bash">npm install --save dbash</code></pre>
+				<p>YARN:</p>
+				<pre><code class="language-bash">yarn add dbash</code></pre>
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
 				</a>
@@ -87,13 +90,24 @@
 				<a href="#functions" id="functions" style="color: inherit; text-decoration: none;">
 					<h2>Functions</h2>
 				</a>
-				<a href="#booleans" id="booleans" style="color: inherit; text-decoration: none;">
-					<h3>Booleans</h3>
+				<a href="#boolean" id="boolean" style="color: inherit; text-decoration: none;">
+					<h3>Boolean</h3>
 				</a>
-				<p><code>jsBoolSqlInt(input: boolean | null): number | null</code>
-				Takes JavaScript boolean or null and returns 1, 0 or null</p>
-				<p><code>sqlIntJsBool(input: number | null): boolean | null</code>
-				Takes SQL number or null and returns true, false or null</p>
+				<pre><code class="language-javascript">jsBoolSqlInt(input: boolean | <span class="hljs-literal">null</span>): number | <span class="hljs-literal">null</span></code></pre>
+				<p>Takes JavaScript boolean or null and returns 1, 0 or null</p>
+				<pre><code class="language-javascript">sqlIntJsBool(input: number | <span class="hljs-literal">null</span>): boolean | <span class="hljs-literal">null</span></code></pre>
+				<p>Takes SQL number or null and returns true, false or null</p>
+				<a href="#date" id="date" style="color: inherit; text-decoration: none;">
+					<h3>Date</h3>
+				</a>
+				<a href="#date-1" id="date-1" style="color: inherit; text-decoration: none;">
+					<h4>DATE</h4>
+				</a>
+				<pre><code class="language-javascript">jsDateSqlDate(input: <span class="hljs-built_in">Date</span> | <span class="hljs-literal">null</span>): string | <span class="hljs-literal">null</span></code></pre>
+				<p>Takes JavaScript Date or null and returns corresponding SQL Date string or null</p>
+				<pre><code class="language-javascript">sqlDateJsDate(input: string | <span class="hljs-literal">null</span>): <span class="hljs-built_in">Date</span> | <span class="hljs-literal">null</span></code></pre>
+				<p>Takes SQL DATE and returns corresponding JS Date or null
+				Accepts <code>2010-07-28</code> or <code>10-07-28</code> formats. Years that are less than 1970 or more than 2037 throw ValueError</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
