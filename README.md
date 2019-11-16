@@ -6,12 +6,12 @@ Tool for converting data between SQL and JS types easily. It's more like a test 
 
 NPM:
 ```bash
-$ npm install --save dbash
+npm install --save dbash
 ```
 
 YARN:
 ```bash
-$ yarn add dbash
+yarn add dbash
 ```
 
 ## Usage
@@ -43,6 +43,7 @@ jsBoolSqlInt(input: boolean | null): number | null
 ```
 Takes JavaScript boolean or null and returns 1, 0 or null
 
+
 ```javascript
 sqlIntJsBool(input: number | null): boolean | null
 ```
@@ -57,6 +58,7 @@ Takes SQL number or null and returns true, false or null
 jsDateSqlDate(input: Date | null): string | null
 ```
 Takes JavaScript Date or null and returns corresponding SQL Date string or null
+
 
 ```javascript
 sqlDateJsDate(input: string | null): Date | null
