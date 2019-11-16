@@ -4,7 +4,15 @@ Tool for converting data between SQL and JS types easily. It's more like a test 
 
 ## Installation
 
-Simply run `npm install --save dbash` or `yarn add dbash`
+NPM:
+```bash
+$ npm install --save dbash
+```
+
+YARN:
+```bash
+$ yarn add dbash
+```
 
 ## Usage
 
@@ -30,10 +38,14 @@ console.log(_.sqlIntJsBool(1));
 
 ### Boolean
 
-`jsBoolSqlInt(input: boolean | null): number | null`
+```javascript
+jsBoolSqlInt(input: boolean | null): number | null
+```
 Takes JavaScript boolean or null and returns 1, 0 or null
 
-`sqlIntJsBool(input: number | null): boolean | null`
+```javascript
+sqlIntJsBool(input: number | null): boolean | null
+```
 Takes SQL number or null and returns true, false or null
 
 
@@ -41,9 +53,13 @@ Takes SQL number or null and returns true, false or null
 
 #### DATE
 
-`jsDateSqlDate(input: Date | null): string | null`
+```javascript
+jsDateSqlDate(input: Date | null): string | null
+```
 Takes JavaScript Date or null and returns corresponding SQL Date string or null
 
-`sqlDateJsDate(input: string | null): Date | null`
+```javascript
+sqlDateJsDate(input: string | null): Date | null
+```
 Takes SQL DATE and returns corresponding JS Date or null
 Accepts `2010-07-28` or `10-07-28` formats. Years that are less than 1970 or more than 2037 throw ValueError
