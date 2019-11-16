@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;index&quot; | dbash</title>
+	<title>&quot;utils/regexes&quot; | dbash</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,16 +56,75 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_index_.html">&quot;index&quot;</a>
+					<a href="_utils_regexes_.html">&quot;utils/regexes&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;index&quot;</h1>
+			<h1>External module &quot;utils/regexes&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_utils_regexes_.html#dateregex" class="tsd-kind-icon">date<wbr>Reg<wbr>Ex</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_utils_regexes_.html#dayregex" class="tsd-kind-icon">day<wbr>Reg<wbr>Ex</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_utils_regexes_.html#monthregex" class="tsd-kind-icon">month<wbr>Reg<wbr>Ex</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_utils_regexes_.html#yearregex" class="tsd-kind-icon">year<wbr>Reg<wbr>Ex</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+					<a name="dateregex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> date<wbr>Reg<wbr>Ex</h3>
+					<div class="tsd-signature tsd-kind-icon">date<wbr>Reg<wbr>Ex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> =&nbsp;new RegExp(&#x27;^&#x27; + yearRegEx + &#x27;-&#x27; + monthRegEx + &#x27;-&#x27; + dayRegEx + &#x27;$&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/utils/regexes.ts:5</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="dayregex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> day<wbr>Reg<wbr>Ex</h3>
+					<div class="tsd-signature tsd-kind-icon">day<wbr>Reg<wbr>Ex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"(([0-2][0-9])|(3[0-1]))"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;(([0-2][0-9])|(3[0-1]))&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/utils/regexes.ts:3</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="monthregex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> month<wbr>Reg<wbr>Ex</h3>
+					<div class="tsd-signature tsd-kind-icon">month<wbr>Reg<wbr>Ex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"((1[0-2])|(0[0-9]))"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;((1[0-2])|(0[0-9]))&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/utils/regexes.ts:2</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="yearregex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> year<wbr>Reg<wbr>Ex</h3>
+					<div class="tsd-signature tsd-kind-icon">year<wbr>Reg<wbr>Ex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"(((20((3[0-7])|([0-2][0-9])))|(19[7-9][0-9]))|(([0-2][0-9])|(3[0-7])|([7-9][0-9])))"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;(((20((3[0-7])|([0-2][0-9])))|(19[7-9][0-9]))|(([0-2][0-9])|(3[0-7])|([7-9][0-9])))&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/utils/regexes.ts:1</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
@@ -79,7 +138,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_converters_date_.html">&quot;converters/date&quot;</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="_index_.html">&quot;index&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -88,13 +147,25 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_utils_functions_.html">&quot;utils/functions&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="_utils_regexes_.html">&quot;utils/regexes&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="_utils_regexes_.html#dateregex" class="tsd-kind-icon">date<wbr>Reg<wbr>Ex</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_utils_regexes_.html#dayregex" class="tsd-kind-icon">day<wbr>Reg<wbr>Ex</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_utils_regexes_.html#monthregex" class="tsd-kind-icon">month<wbr>Reg<wbr>Ex</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_utils_regexes_.html#yearregex" class="tsd-kind-icon">year<wbr>Reg<wbr>Ex</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

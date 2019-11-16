@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { jsBoolSqlInt, sqlIntJsBool } from '../src/booleans';
+import { jsBoolSqlInt, sqlIntJsBool } from '../src/converters/boolean';
 
 describe('JS Boolean to SQL Integer', () => {
     it('True should return 1', () => {
