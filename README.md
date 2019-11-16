@@ -8,19 +8,19 @@ Simply run `npm install --save dbash` or `yarn add dbash`
 
 ## Usage
 
-JavaScript:
+CommonJS:
 ```javascript
 var _ = require('dbash');
 console.log(_.sqlIntJsBool(1));
 ```
 
-TypeScript:
-```typescript
+ES2015:
+```javascript
 import { sqlIntJsBool } from 'dbash';
 console.log(sqlIntJsBool(1));
 ```
 
-Also TypeScript:
+Also ES2015:
 ```typescript
 import * as _ from 'dbash';
 console.log(_.sqlIntJsBool(1));
