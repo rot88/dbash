@@ -1,6 +1,6 @@
 {
   "name": "@oocydo/dbash",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "SQL and JS types converter",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
