@@ -4,11 +4,11 @@
  * @returns 1, 0 or null, depending on input
  */
 export function jsBoolSqlInt(input: boolean | null): number | null {
-    if (input == null) {
-        return null;
-    } else {
-        return input ? 1 : 0;
-    }
+  if (input == null) {
+    return null;
+  } else {
+    return input ? 1 : 0;
+  }
 }
 
 /**
@@ -17,9 +17,9 @@ export function jsBoolSqlInt(input: boolean | null): number | null {
  * @returns true, false or null, depending on input
  */
 export function sqlIntJsBool(input: number | null): boolean | null {
-    if (input == null) {
-        return null;
-    } else {
-        return !(input === 0);
-    }
+  if (input == null) {
+    return null;
+  } else {
+    return !(input === 0);
+  }
 }

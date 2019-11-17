@@ -8,12 +8,12 @@ import { dateRegEx } from '../utils/regexes'
  * @returns SQL Date string or null, depending on input
  */
 export function jsDateSqlDate(input: Date | null): string | null {
-    if (input == null) {
-        return null;
-    } else {
-        // @ts-ignore
-        return input.getFullYear() + '-' + datePad(input.getMonth() + 1) + '-' + datePad(input.getDate());
-    }
+  if (input == null) {
+    return null;
+  } else {
+    // @ts-ignore
+    return input.getFullYear() + '-' + datePad(input.getMonth() + 1) + '-' + datePad(input.getDate());
+  }
 }
 
 /**
@@ -22,18 +22,18 @@ export function jsDateSqlDate(input: Date | null): string | null {
  * @returns JS Date or null, depending on input
  */
 export function sqlDateJsDate(input: string | null): Date | null {
-    if (input == null) {
-        return null;
+  if (input == null) {
+    return null;
+  } else {
+    if (dateRegEx.test(input)) {
+      const dateArray = input.split('-');
+      return new Date(
+        +dateArray[0],
+        +dateArray[1] - 1,
+        +dateArray[2]
+      );
     } else {
-        if (dateRegEx.test(input)) {
-            const dateArray = input.split('-');
-            return new Date(
-                +dateArray[0],
-                +dateArray[1] - 1,
-                +dateArray[2]
-            );
-        } else {
-            throw new ValueError('Input is not valid SQL Date string');
-        }
+      throw new ValueError('Input is not valid SQL Date string');
     }
+  }
 }
