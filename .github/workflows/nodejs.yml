@@ -33,7 +33,7 @@ jobs:
           node-version: 12
           registry-url: 'https://npm.pkg.github.com/'
           scope: '@oocydo'
-      - run: sed -i 's/\"dbash\"/\"@oocydo\/dbash\"/' package.json
+      - run: 'sed -i \'s/\"dbash\"/\"@oocydo\/dbash\"/\' package.json'
       - run: 'sed -i \'/  \"author\": \"oocydo\",/i \  \"publishConfig\": {\n    \"registry\": \"https:\/\/npm.pkg.github.com\/\"\n  },\' package.json'
       - run: npm ci
       - run: npm run compile
