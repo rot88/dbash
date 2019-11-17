@@ -11,5 +11,4 @@ docs/
 .github/
 .git/
 
-.gpr-package.json
-.npm-package.json
+gprPackage.sh
