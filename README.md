@@ -1,6 +1,6 @@
 # DBash
 
-Tool for converting data between SQL and JS types easily. It's more like a test library to see how npm packages work.
+Tool for converting data between SQL and JS types easily. It's more like a test library to see how npm packages work. Name inspired by [Lodash](https://github.com/lodash/lodash) - ultimate JavaScript toolkit
 
 ## Installation
 
