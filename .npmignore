@@ -11,4 +11,4 @@ docs/
 .github/
 .git/
 
-gprPackage.sh
+.gprPackage.sh
