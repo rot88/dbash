@@ -33,7 +33,7 @@ jobs:
           node-version: 12
           registry-url: 'https://npm.pkg.github.com/'
           scope: '@oocydo'
-      - run: bash ./gprPackage.sh
+      - run: bash ./.gprPackage.sh
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GPR_DBASH }}
