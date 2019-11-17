@@ -18,6 +18,8 @@ export function jsDateSqlDate(input: Date | null): string | null {
 
 /**
  * Converts SQL Date to JS Date. May be null
+ * Accepts `2010-07-28` and `10-07-28` formats
+ * Years that are less than 1970 or more than 2037 throw ValueError
  * @param input SQL Date value to be converted
  * @returns JS Date or null, depending on input
  */

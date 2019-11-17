@@ -19,11 +19,11 @@ $ yarn add dbash
 var _ = require('dbash');
 console.log(_.sqlIntJsBool(1));
 
-//ES2015
+// ES2015
 import { sqlIntJsBool } from 'dbash';
 console.log(sqlIntJsBool(1));
 
-//Also ES2015
+// Also ES2015
 import * as _ from 'dbash';
 console.log(_.sqlIntJsBool(1));
 ```
@@ -51,6 +51,6 @@ jsDateSqlDate(input: Date | null): string | null
 
 sqlDateJsDate(input: string | null): Date | null
 // Takes SQL DATE and returns corresponding JS Date or null
-// Accepts `2010-07-28` or `10-07-28` formats
+// Accepts `2010-07-28` and `10-07-28` formats
 // Years that are less than 1970 or more than 2037 throw ValueError
 ```
