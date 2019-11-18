@@ -44,8 +44,6 @@ sqlIntJsBool(input: number | null): boolean | null
 // Takes SQL number or null and returns true, false or null
 ```
 
----
-
 ### Date
 
 #### DATE
