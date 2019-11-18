@@ -1,6 +1,6 @@
 # DBash
 
-Tool for converting data between SQL and JS types easily. It's more like a test library to see how npm packages work. Name inspired by [Lodash](https://github.com/lodash/lodash) - the ultimate JavaScript toolkit :fire:.
+Tool for converting data between SQL and JS types easily. It's more like a test library to see how npm packages work. Name inspired by [Lodash](https://github.com/lodash/lodash) - the ultimate JavaScript toolkit.
 
 ## Installation
 
@@ -14,7 +14,7 @@ $ npm install --save dbash
 $ yarn add dbash
 ```
 
-DBash is also available from [GitHub Package Registry](https://help.github.com/en/github/managing-packages-with-github-packages/about-github-packages) :+1:.
+DBash is also available from [GitHub Package Registry](https://help.github.com/en/github/managing-packages-with-github-packages/about-github-packages).
 
 ## Usage
 
