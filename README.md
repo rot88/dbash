@@ -1,8 +1,10 @@
 # DBash
 
-Tool for converting data between SQL and JS types easily. It's more like a test library to see how npm packages work. Name inspired by [Lodash](https://github.com/lodash/lodash) - ultimate JavaScript toolkit
+Tool for converting data between SQL and JS types easily. It's more like a test library to see how npm packages work. Name inspired by [Lodash](https://github.com/lodash/lodash) - the ultimate JavaScript toolkit :fire:.
 
 ## Installation
+
+Installation is same for most of the Node.js packages:
 
 ```bash
 # NPM
@@ -11,6 +13,8 @@ $ npm install --save dbash
 # Yarn
 $ yarn add dbash
 ```
+
+DBash is also available from [GitHub Package Registry](https://help.github.com/en/github/managing-packages-with-github-packages/about-github-packages) :+1:.
 
 ## Usage
 
@@ -32,7 +36,7 @@ console.log(_.sqlIntJsBool(1));
 
 ### Boolean
 
-```javascript
+```typescript
 jsBoolSqlInt(input: boolean | null): number | null
 // Takes JavaScript boolean or null and returns 1, 0 or null
 
@@ -40,12 +44,13 @@ sqlIntJsBool(input: number | null): boolean | null
 // Takes SQL number or null and returns true, false or null
 ```
 
+---
 
 ### Date
 
 #### DATE
 
-```javascript
+```typescript
 jsDateSqlDate(input: Date | null): string | null
 // Takes JavaScript Date or null and returns corresponding SQL Date string or null
 
