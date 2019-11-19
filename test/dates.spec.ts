@@ -1,6 +1,6 @@
-import { expect } from 'chai';
-import { jsDateSqlDate, sqlDateJsDate } from '../src/converters/date';
-import { ValueError } from '../src/utils/errors';
+import {expect} from 'chai';
+import {jsDateSqlDate, sqlDateJsDate} from '../src';
+import {ValueError} from '../src/utils/errors';
 
 describe('JS Date to SQL Date', () => {
   it('Valid JS Date should return valid SQL Date', () => {
@@ -19,9 +19,16 @@ describe('JS Date to SQL Date', () => {
 });
 
 describe('SQL Date to JS Date', () => {
-  it('Valid SQL Date should return valid JS Date', () => {
+  it('Valid full SQL Date should return valid JS Date', () => {
     // @ts-ignore
     expect(sqlDateJsDate('2010-07-28').getTime()).to.be.equal(new Date(2010, 6, 28).getTime());
+  });
+
+  it('Valid short SQL Date should return valid JS Date', () => {
+    // @ts-ignore
+    expect(sqlDateJsDate('10-07-28').getTime()).to.be.equal(new Date(2010, 6, 28).getTime());
+    // @ts-ignore
+    expect(sqlDateJsDate('97-07-28').getTime()).to.be.equal(new Date(1997, 6, 28).getTime());
   });
 
   it('Invalid SQL Date should throw Error', () => {

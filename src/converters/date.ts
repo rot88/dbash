@@ -1,6 +1,6 @@
-import { datePad } from '../utils/functions';
-import { ValueError } from '../utils/errors';
-import { dateRegEx } from '../utils/regexes'
+import {datePad} from '../utils/functions';
+import {ValueError} from '../utils/errors';
+import {dateFullRegEx, dateShortRegEx} from '../utils/regexes'
 
 /**
  * Converts JS Date to SQL Date. May be null.
@@ -27,12 +27,24 @@ export function sqlDateJsDate(input: string | null): Date | null {
   if (input == null) {
     return null;
   } else {
-    if (dateRegEx.test(input)) {
+    if (dateFullRegEx.test(input)) {
       const dateArray = input.split('-');
+      dateArray.map((n) => {
+        +n;
+      });
       return new Date(
         +dateArray[0],
         +dateArray[1] - 1,
         +dateArray[2]
+      );
+    } else if (dateShortRegEx.test(input)) {
+      const dateArray = input.split('-');
+      const numberDateArray = dateArray.map((n) => +n);
+      numberDateArray[0] = numberDateArray[0] < 50 ? 2000 + numberDateArray[0] : 1900 + numberDateArray[0];
+      return new Date(
+        numberDateArray[0],
+        numberDateArray[1] - 1,
+        numberDateArray[2]
       );
     } else {
       throw new ValueError('Input is not valid SQL Date string');
