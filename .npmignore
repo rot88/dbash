@@ -3,6 +3,7 @@ test/
 docs/
 
 .vscode/
+.idea/
 
 .tsconfig.json
 .editorconfig
