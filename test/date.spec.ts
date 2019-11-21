@@ -13,8 +13,9 @@ describe('JS Date to SQL Date', () => {
     )).to.be.equal('2010-07-28');
   });
 
-  it('Null should return null', () => {
-    expect(jsDateSqlDate(null)).to.be.equal(null);
+  it('Year that is not between 0 and 10000 should throw ValueError', () => {
+    expect(() => jsDateSqlDate(new Date(10000, 6, 28))).to.throw(ValueError);
+    expect(() => jsDateSqlDate(new Date(-1, 6, 28))).to.throw(ValueError);
   });
 });
 
@@ -32,10 +33,6 @@ describe('SQL Date to JS Date', () => {
   });
 
   it('Invalid SQL Date should throw Error', () => {
-    expect(() => sqlDateJsDate('2010-07-283')).to.throw(ValueError);
-  });
-
-  it('Null should return null', () => {
-    expect(sqlDateJsDate(null)).to.be.equal(null);
+    expect(() => sqlDateJsDate('2010-07-28 23:23:23')).to.throw(ValueError);
   });
 });

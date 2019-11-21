@@ -9,10 +9,6 @@ describe('JS Boolean to SQL Integer', () => {
   it('False should return 0', () => {
     expect(jsBoolSqlInt(false)).to.be.equal(0);
   });
-
-  it('Null should return null', () => {
-    expect(jsBoolSqlInt(null)).to.be.equal(null);
-  });
 });
 
 describe('SQL Integer to JS Boolean', () => {
@@ -27,9 +23,5 @@ describe('SQL Integer to JS Boolean', () => {
 
   it('Zero should return false', () => {
     expect(sqlIntJsBool(0)).to.be.equal(false);
-  });
-
-  it('Null should return null', () => {
-    expect(sqlIntJsBool(null)).to.be.equal(null);
   });
 });
