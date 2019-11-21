@@ -37,21 +37,33 @@ console.log(_.sqlIntJsBool(1));
 ### Boolean
 
 ```javascript
-jsBoolSqlInt(input: boolean | null): number | null
-// Takes JavaScript boolean or null and returns 1, 0 or null
+jsBoolSqlInt(input: boolean): number
+// Takes JavaScript boolean or null and returns 1 or 0
 
-sqlIntJsBool(input: number | null): boolean | null
-// Takes SQL number or null and returns true, false or null
+sqlIntJsBool(input: number): boolean
+// Takes SQL number or null and returns true or false
 ```
 
 ### Date
 
-#### DATE
+#### Date
 
 ```javascript
-jsDateSqlDate(input: Date | null): string | null
-// Takes JavaScript Date or null and returns corresponding SQL Date string or null
+jsDateSqlDate(input: Date): string
+// Takes JavaScript Date and returns corresponding SQL Date string
 
-sqlDateJsDate(input: string | null): Date | null
-// Takes SQL DATE and returns corresponding JS Date or null. Accepts `2010-07-28` and `10-07-28` formats
+sqlDateJsDate(input: string): Date
+// Takes SQL DATE and returns corresponding JS Date object
+// Accepts `2010-07-28` and `10-07-28` formats
+```
+
+#### DateTime
+
+```javascript
+jsDateSqlDateTime(input: Date): string
+// Takes JavaScript Date and returns corresponding SQL DateTime string
+
+sqlDateTimeJsDate(input: string): Date
+// Takes SQL DateTime and returns corresponding JS Date object
+// Accepts `2010-07-28 11:12:13` and `10-07-28 11:12:13` formats
 ```
