@@ -36,12 +36,24 @@ console.log(_.sqlIntJsBool(1));
 
 ### Boolean
 
+#### Integer
+
 ```javascript
 jsBoolSqlInt(input: boolean): number
-// Takes JavaScript boolean or null and returns 1 or 0
+// Takes JavaScript boolean and returns 1 or 0
 
 sqlIntJsBool(input: number): boolean
-// Takes SQL number or null and returns true or false
+// Takes SQL number and returns true or false
+```
+
+#### String
+
+```javascript
+jsBoolSqlString(input: boolean): string
+// Takes JavaScript boolean and returns 'true' or 'false'
+
+sqlStringJsBool(input: string): boolean
+// Takes SQL string and returns and returns true or false
 ```
 
 ### Date
